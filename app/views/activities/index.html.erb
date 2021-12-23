@@ -1,0 +1,93 @@
+<div class="jumbotron">
+<div class="container-fluid">
+<h1 class="display-6">My Activities</h1>
+<p class="lead">Please select an activity</p>
+<hr class="my-4">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <%= link_to 'Running', new_activity_path({ :activities => 'Running' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Fitness', new_activity_path({ :activities => 'Fitness' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Rugby', new_activity_path({ :activities => 'Rugby' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Crossfit', new_activity_path({ :activities => 'Crossfit' }), :class => "btn btn-primary" %> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+    <%= link_to 'Track&Field', new_activity_path({ :activities => 'Track&Field' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Walk', new_activity_path({ :activities => 'Walk' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Volleyball', new_activity_path({ :activities => 'Volleyball' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Football', new_activity_path({ :activities => 'Football' }), :class => "btn btn-primary" %> 
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-sm">
+    <%= link_to 'Basketball', new_activity_path({ :activities => 'Basketball' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Swimming', new_activity_path({ :activities => 'Swimming' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Dancing', new_activity_path({ :activities => 'Dancing' }), :class => "btn btn-primary" %> 
+    </div>
+    <div class="col-sm">
+    <%= link_to 'Handball', new_activity_path({ :activities => 'Handball' }), :class => "btn btn-primary" %> 
+    </div>
+</div>
+
+</div>
+
+<div class="container" id="table">
+  <div class="row">
+<table class="table table-striped " id="tablestyle">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @activities.each do |activity| %>
+    <tr>
+        <th scope ="row"><%= activity.date %></th>
+      <td><%= activity.activities %></td>
+      <td><%= activity.duration %> min </td>
+      <td>
+        <%=link_to "Modify" , edit_activity_path(activity), class:"btn btn-success"%>
+        <%=link_to "Delete" , activity, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"%>
+      </td>
+
+    
+      
+    </tr>
+  <% end %>
+  
+  
+      
+    
+      
+  </tbody>
+</table>
+
+
+
+
+</div>
+</div>
+</div>
+</div>

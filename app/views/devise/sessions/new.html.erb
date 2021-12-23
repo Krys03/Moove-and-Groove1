@@ -1,0 +1,165 @@
+<div class="jumbotron">
+
+<h1 class="display-6">Move and Groove</h1>
+<p class="lead">Train Eat Sleep Repeat</p>
+<hr class="my-4">
+<p>Please Login to your account</p>
+<div class="row">
+<div class="mx-auto">
+<div class="card card-signin">
+
+
+
+<h2 class="card-title text-center">Login</h2>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, :placeholder => "Email address" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password,:placeholder => "Password"%>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit "Log in", class: 'btn btn-primary' %>
+  </div>
+ 
+
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Don't have an account?", new_registration_path(resource_name), class:"no-account" %>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class:"fgt-pwd" %><br />
+<% end %>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class ="row">
+      <div class="team-section text-center my-5">
+
+ 
+           
+
+            <div class="row text-center">
+
+ 
+                <div class="col-md-4 mb-md-0 mb-5">
+
+                      <div class="testimonial">
+     
+                            <div class="avatar mx-auto">
+                              <img src="https://b.fssta.com/uploads/application/nba/headshots/1120.vresize.350.350.medium.12.png" class="rounded-circle z-depth-1 ">
+                            </div>
+      
+                              <h4 class="font-weight-bold dark-grey-text mt-4">Lebron James</h4>
+                              <h6 class="font-weight-bold blue-text my-3">NBA player</h6>
+                              <p class="font-weight-normal dark-grey-text">
+                              <i class="fas fa-quote-left pr-2"></i>I'm using move and groove every day before I start a training.it helps me to record what I'm and how I can achieve my goal. Simply the best app.</p>
+     
+                                <div class="orange-text">
+                                  <i class="fas fa-star"> </i>
+                                  <i class="fas fa-star"> </i>
+                                  <i class="fas fa-star"> </i>
+                                  <i class="fas fa-star"> </i>
+                                  <i class="fas fa-star-half-alt"> </i>
+                                </div>
+                        </div>
+
+                </div>
+  
+                      <div class="col-md-4 mb-md-0 mb-5">
+
+                          <div class="testimonial">
+      
+                                <div class="avatar mx-auto">
+                                  <img src="https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/sfehmfwtg9i5gdcpqzgf" class="rounded-circle z-depth-1 ">
+                                </div>
+      
+                                        <h4 class="font-weight-bold dark-grey-text mt-4">Tom Brady</h4>
+                                        <h6 class="font-weight-bold blue-text my-3">NFL Player</h6>
+                                        <p class="font-weight-normal dark-grey-text">
+                                          <i class="fas fa-quote-left pr-2"></i>The best app right now. Just download the app or use it directly via the website. It works well and it is really intuitive. I can only recommend it.</p>
+                                      
+                                          <div class="orange-text">
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                          </div>
+                            </div>
+
+                      </div>
+  
+
+  
+                       <div class="col-md-4">
+
+                            <div class="testimonial">
+      
+                                <div class="avatar mx-auto">
+                                  <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/4024123.png&w=350&h=254" class="rounded-circle z-depth-1 ">
+                                </div>
+      
+                                      <h4 class="font-weight-bold dark-grey-text mt-4">Austin Mathews</h4>
+                                      <h6 class="font-weight-bold blue-text my-3">NHL Player</h6>
+                                      <p class="font-weight-normal dark-grey-text">
+                                        <i class="fas fa-quote-left pr-2"></i>
+                                        I recommend moove and Groove for who want to keep a track of their performance on daily basis. Just like me download the app.</p>
+                                      
+                                          <div class="orange-text">
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="fas fa-star"> </i>
+                                            <i class="far fa-star"> </i>
+                                          </div>
+                              </div>
+
+                        </div>
+  
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<section class="download  text-center" id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h2 class="section-heading">Discover what all the buzz is about!</h2>
+          <p>Our app is available on any mobile device! Download now to get started!</p>
+          <div class="badges">
+            <a class="badge-link" href="#"><%= image_tag 'appstore.svg' %></a>
+            <a class="badge-link" href="#"><%= image_tag 'googleplay.svg' %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project6</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><%= image_tag 'mandg.png' %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <% if !user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" ><%= link_to "Sign up", new_registration_path(resource_name) , class:"button_menu" %></a>
+        </li>
+        
+        <li class="nav-item">
+
+          <a class="nav-link"><%= link_to "Login", new_session_path(resource_name), class:"button_menu" %></a>
+          
+        </li>
+        <%else%>
+        
+        <li class="nav-item">
+
+        <a class="nav-link">
+
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true } %>
+        
+        </a>
+
+    
+      </li>
+ 
+      <li class="nav-item">
+      <a class="nav-link">
+
+        <%= link_to "My activities", activities_path %>
+        
+        </a>
+        </li>
+        
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</nav>
+   
+
+
+    <%= yield %>
+
+<% if !user_signed_in? %> 
+<footer class="footer-copyright text-center py-2">
+<p>© 2020 Copyright: <a href="">Move&Groove.com</a></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<%end%>
+<% if user_signed_in? %>
+<footer class="footer-copyright text-center py-2">
+<div class="container">
+<div class="row" id="row-footer">
+
+<div class="col-sm">
+</div>
+<div class="col-sm">
+<p class="">© 2020 Copyright: <a href="">Move&Groove.com</a></p>
+</div>
+<div class="col-sm">
+    <%= link_to "Logout", destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }, class:"btn btn-light" %>
+    <%= link_to "My activities", activities_path , class:"btn btn-light" %>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<%end%>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<div class ="jumbotron">
+<h1 class="display-6">Welcome to Move and Groove</h1>
+<p class="lead">Train Eat Sleep Repeat</p>
+<hr class="my-4">
+<p>Please Create your account </p>
+<div class="row">
+<div class="mx-auto">
+<div class="card card-signin my-5">
+
+
+<h2 class="card-title text-center">Register</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "Email address" %>
+  </div>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password" ,:placeholder => "Password" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,:placeholder => "Confirm password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
+
+  <hr class="my-4"> 
+
+  <div class="actions">
+  <%= f.button "Sign up with Google",  class: 'btn btn-success' %>
+  
+  </div>
+
+<div class="actions">
+    <%= f.button "Sign up with Facebook", class: 'btn btn-danger' %>
+  </div>
+
+
+<% end %>
+
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Already have an account ?", new_session_path(resource_name), class:"already"%><br />
+<% end %>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
